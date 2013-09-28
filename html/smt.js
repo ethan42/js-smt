@@ -46,6 +46,14 @@ function UnOp(op, e) {
     this.op = op;
     this.e = e;
 }
+function Ite(b, e1, e2) {
+    this.b = b;
+    this.e1 = e1;
+    this.e2 = e2;
+    this.toString = function () {
+        return "(ite " + this.b.toString() + " " + this.e1.toString() + " " + this.e2.toString() + ")";
+    }
+}
 
 // Statements
 function CheckSat() {

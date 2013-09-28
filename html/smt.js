@@ -1,3 +1,11 @@
+// Types
+function IntType() {
+    this.type = "Int";
+    this.toString = function () {
+        return this.type;
+    }
+}
+
 // Expression Operators
 function Add() {
     this.name = "+";   
@@ -56,6 +64,23 @@ function Ite(b, e1, e2) {
 }
 
 // Statements
+function DeclareVar(variable, type) {
+    this.type = type;
+    this.variable = variable;
+    this.toString = function () {
+        return "(declare-fun " + this.variable.toString() + " () " + this.type.toString() + ")";
+    }
+}
+function DeclareFunction(name, inputvar, inputtype, body, bodytype) {
+    this.name = name;
+    this.inputvar = inputvar;
+    this.inputtype = inputtype;
+    this.body = body;
+    this.bodytype = bodytype;
+    this.toString = function () {
+        return "(define-fun " + name + "((" + inputvar.toString () + " " + inputtype.toString () + ")) " + inputtype.toString() + body.toString() + ")";
+    }
+}
 function CheckSat() {
     this.name = "SAT"
     this.toString = function () {

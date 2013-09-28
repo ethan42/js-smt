@@ -5,6 +5,12 @@ function IntType() {
         return this.type;
     }
 }
+function BoolType() {
+    this.type = "Bool";
+    this.toString = function () {
+        return this.type;
+    }
+}
 
 // Expression Operators
 function Add() {
@@ -78,7 +84,7 @@ function DeclareFunction(name, inputvar, inputtype, body, bodytype) {
     this.body = body;
     this.bodytype = bodytype;
     this.toString = function () {
-        return "(define-fun " + name + "((" + inputvar.toString () + " " + inputtype.toString () + ")) " + inputtype.toString() + body.toString() + ")";
+        return "(define-fun " + name + "((" + inputvar.toString () + " " + inputtype.toString () + ")) " + inputtype.toString() + " " + body.toString() + ")";
     }
 }
 function CheckSat() {

@@ -57,6 +57,6 @@ function GetModel() {
 function Assert(e) {
     this.e = e;
     this.toString = function () {
-        return "assert " + this.e.toString();
+        return "(assert " + this.e.toString() + ")";
     }
 }

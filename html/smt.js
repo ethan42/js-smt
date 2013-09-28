@@ -25,7 +25,7 @@ function And() {
 function Int(i) {
     this.int = i;
     this.toString = function () {
-        return "" + this.i;
+        return this.int.toString();
     }
 }
 function Var(name) {

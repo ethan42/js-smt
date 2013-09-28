@@ -68,6 +68,13 @@ function Ite(b, e1, e2) {
         return "(ite " + this.b.toString() + " " + this.e1.toString() + " " + this.e2.toString() + ")";
     }
 }
+function Apply(decl, e) {
+    this.func = decl;
+    this.e = e;
+    this.toString = function () {
+        return "(" + this.func.name + " " + this.e.toString() + ")";
+    }
+}
 
 // Statements
 function DeclareVar(variable, type) {

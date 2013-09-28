@@ -1,0 +1,13 @@
+<html>
+    
+    <script type="text/javascript" src="smt.js"></script>
+
+    <script>
+        var v = new Var("load");
+        var exp = new BinOp(new Add(), v, v);
+        exp = new BinOp (new Equal(), exp, exp);
+        var stmt = new Assert(exp);
+        alert(stmt.toString());
+    </script>
+
+</html>

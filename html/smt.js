@@ -22,6 +22,12 @@ function And() {
 }
 
 // Expressions
+function Int(i) {
+    this.int = i;
+    this.toString = function () {
+        return this.i.toString();
+    }
+}
 function Var(name) {
     this.name = name;
     this.toString = function () {
